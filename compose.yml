@@ -32,7 +32,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - vprofile-project_vprodbdata:/usr/local/tomcat/webapps
+      - vprofile-project_vproappdata:/usr/local/tomcat/webapps
 
   vproweb:
     build:
