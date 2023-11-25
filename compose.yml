@@ -8,7 +8,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - vprodbdata:var/lib/mysql
+      - vprofile-project_vprodbdata:var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD="vprodbpass"
   vprocache01:
@@ -32,7 +32,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - vproappdata:/usr/local/tomcat/webapps
+      - vprofile-project_vproappdata:/usr/local/tomcat/webapps
 
   vproweb:
     build:
@@ -42,7 +42,9 @@ services:
     ports:
       - "80:80"
 
-
+volumes:
+  vprodbdata: {}
+  vproappdata: {}
 
   #vprosearch01:
    # image: elasticsearch
